@@ -1,33 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-void mergeSort(int arr[], int left, int right);
-void merge(int arr[], int left, int mid, int right);
-void printArr(int arr[], int arrSize);
-int main(void)
-{
-	int n;
-
-	printf("Enter the length of your array:\n");
-	scanf("%d",&n);
-
-	int arr[n];
-	printf("Enter the values of your array:\n");
-	for (int i = 0; i < n; ++i)
-	{
-		scanf("%d",&arr[i]);
-	}
-
-	printf("\nInitial array:\n");
-	printArr(arr, n);
-
-	mergeSort(arr, 0, n-1);
-
-	printf("\nSorted array:\n");
-	printArr(arr, n);
-
-	return 0;
-}
 
 void mergeSort(int arr[], int left, int right)
 {
@@ -88,4 +61,29 @@ void printArr(int arr[], int arrSize)
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
+}
+
+int main(void)
+{
+	int n;
+
+	printf("Enter the length of your array:\n");
+	scanf("%d",&n);
+
+	int arr[n];
+	printf("Enter the values of your array:\n");
+	for (int i = 0; i < n; ++i)
+	{
+		scanf("%d",&arr[i]);
+	}
+
+	printf("\nInitial array:\n");
+	printArr(arr, n);
+
+	mergeSort(arr, 0, n-1);
+
+	printf("\nSorted array:\n");
+	printArr(arr, n);
+
+	return 0;
 }

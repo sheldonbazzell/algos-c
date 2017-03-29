@@ -1,15 +1,4 @@
 #include <stdio.h>
-int powers(int x, int n);
-int main(void)
-{
-	int X, n;
-	printf("In computing X to the nth power, enter X:\n");
-	scanf("%d", &X);
-	printf("Now enter n:\n");
-	scanf("%d", &n);
-	int result = powers(X, n);
-	printf("%d\n", result);
-}
 
 int powers(int x, int n)
 {
@@ -24,7 +13,18 @@ int powers(int x, int n)
 	}
 	else
 	{
-		int y = powers(x,n/2);
+		int y = powers(x,n-1);
 		return y * y;
 	}
+}
+
+int main(void)
+{
+	int X, n;
+	printf("In computing X to the nth power, enter X:\n");
+	scanf("%d", &X);
+	printf("Now enter n:\n");
+	scanf("%d", &n);
+	int result = powers(X, n);
+	printf("%d\n", result);
 }

@@ -11,32 +11,6 @@ typedef struct tree {
 	struct node *root;
 } tree;
 
-void pushTree(tree *tree, int value);
-int removeN(node *root, node *parent, int target);
-void pushNode(node *node, int value);
-void inOrderTraverseT(tree *tree);
-void inOrderTraverseN(node *node);
-int height(node *node);
-bool isBalanced(node *node);
-
-int main(void)
-{
-	tree *tree;
-	pushTree(tree, 5);
-	pushTree(tree, 2);
-	pushTree(tree, 7);
-	pushTree(tree, 1);
-	pushTree(tree, 9);
-	pushTree(tree, 3);
-	pushTree(tree, 6);
-	removeN(tree->root, NULL, 7);
-	inOrderTraverseT(tree);
-	//int x = height(tree->root);
-	//printf("%d\n", x);
-	bool y = isBalanced(tree->root);
-	printf("%s\n", y ? "true" : "false");
-	return 1;
-}
 
 void pushTree(tree *tree, int value)
 {
@@ -209,4 +183,21 @@ bool isBalanced(node *node)
 	}
 }
 
-
+int main(void)
+{
+	tree *tree;
+	pushTree(tree, 5);
+	pushTree(tree, 2);
+	pushTree(tree, 7);
+	pushTree(tree, 1);
+	pushTree(tree, 9);
+	pushTree(tree, 3);
+	pushTree(tree, 6);
+	removeN(tree->root, NULL, 7);
+	inOrderTraverseT(tree);
+	//int x = height(tree->root);
+	//printf("%d\n", x);
+	bool y = isBalanced(tree->root);
+	printf("%s\n", y ? "true" : "false");
+	return 1;
+}
